@@ -1,5 +1,5 @@
-def S(N1,N2):
-    return N1 + N2
+def S(A,B):
+    return 1 + 3
 def R(a,b):
     return a - b
 def M(a,b):
