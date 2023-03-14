@@ -1,10 +1,12 @@
-def S(A,B):
-    return 1 + 3
-def R(a,b):
-    return a - b
-def M(a,b):
-    return a * b
-def D(a,b):
-    return a / b
-def P(a,b):
-    return a % b
+
+
+def registrarEmpleado():
+ print("empleado")
+def listaEmpleados():
+ print("lista empleado")
+def registrarMedicamento():
+ print("resmedicamento")
+def listaMedicamentos():
+ print("lista de medicamento")
+def horasTrabajo():
+ print("horas de trabajo")

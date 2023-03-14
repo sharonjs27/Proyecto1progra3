@@ -2,16 +2,23 @@ import funciones
 
 
 print(' *** BIENVENIDOS A BASE DE DATOS ***')
-print('1: sumas')
-print('2: resta')
-print('3: divicion')
-print('6: multiplicación')
-print('5: tablas de multiplicar')
-print('0: Salir')
+menu = int (input("MENU \n1: registrar empleado \n2: mostrar lista de empleados \n3: registrar medicamento \n4: lista de medicamentos \n5: horas trabajadas \n6: Salir "))
 
-opcion = input('opcion')
-print(opcion + 'hola')
-
+while menu != 6:
+    if menu == 1:
+       funciones.registrarEmpleado()
+    elif menu == 2:
+       funciones.listaEmpleados()
+    elif menu == 3:
+        funciones.registrarMedicamento()
+    elif menu == 4:
+        funciones.listaMedicamentos()
+    elif menu == 5:
+        funciones.horasTrabajo()
+    else:
+        print ("digete la opcion correcta")
+    menu = int(input(
+        "MENU \n1: registrar empleado \n2: mostrar lista de empleados \n3: registrar medicamento \n4: lista de medicamentos \n5: horas trabajadas \n6: Salir "))
 
 
 
