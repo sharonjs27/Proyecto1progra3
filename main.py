@@ -1,14 +1,15 @@
 import funciones
 
-
-print(' *** BIENVENIDOS A BASE DE DATOS ***')
-menu = int (input("MENU \n1: registrar empleado \n2: mostrar lista de empleados \n3: registrar medicamento \n4: lista de medicamentos \n5: horas trabajadas \n6: Salir "))
+print(' *** BIENVENIDO A BASE DE DATO ***')
+menu = int(input(
+    'MENU \n1: registrar empleado \n2: mostrar lista de empleados \n3: registrar medicamentos \n4: lista de '
+    'medicamentos \n5: horas trabajadas \n6: Salir '))
 
 while menu != 6:
     if menu == 1:
-       funciones.registrarEmpleado()
+        funciones.registrarEmpleado()
     elif menu == 2:
-       funciones.listaEmpleados()
+        funciones.listaEmpleados()
     elif menu == 3:
         funciones.registrarMedicamento()
     elif menu == 4:
@@ -16,11 +17,7 @@ while menu != 6:
     elif menu == 5:
         funciones.horasTrabajo()
     else:
-        print ("digete la opcion correcta")
+        print('digete la option correcta')
     menu = int(input(
-        "MENU \n1: registrar empleado \n2: mostrar lista de empleados \n3: registrar medicamento \n4: lista de medicamentos \n5: horas trabajadas \n6: Salir "))
-
-
-
-
-
+        "MENU \n1: registrar empleado \n2: mostrar lista de empleados \n3: registrar medicamento \n4: lista de "
+        "medicamentos \n5: horas trabajadas \n6: Salir "))
