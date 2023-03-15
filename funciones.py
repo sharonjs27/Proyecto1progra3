@@ -1,12 +1,14 @@
+import asyncio
+
 import lista
 
 
 class Empleado():
-    def __int__(self):
+    def __int__(self,cedula, nombre, apellido, ocupacion):
         self.cedula = " "
-        self.nombre = " "
-        self.apellido = " "
-        self.ocupacion = " "
+        self.nombre = str
+        self.apellido = str
+        self.ocupacion = str
 
 
 class Medicamentos:
@@ -14,10 +16,6 @@ class Medicamentos:
         self.nombre = ""
         self.compActivo = ""
         self.unidades = ""
-
-
-productos = []
-
 
 def registrarEmpleado():
     print("empleado")
@@ -30,8 +28,9 @@ def registrarEmpleado():
 
 
 def listaEmpleados():
-    print("lista empleado")
+    print(" lista empleado ")
 
+    print("lista empleados: ", lista)
 
 def registrarMedicamento():
     print(" Registro de medicamentos ")
