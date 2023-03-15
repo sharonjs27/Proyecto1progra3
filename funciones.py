@@ -3,7 +3,7 @@ import asyncio
 import lista
 
 
-class Empleado():
+class Empleado:
     def __int__(self,cedula, nombre, apellido, ocupacion):
         self.cedula = " "
         self.nombre = str
