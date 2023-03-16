@@ -4,7 +4,7 @@ import lista
 
 
 class Empleado:
-    def __int__(self,cedula, nombre, apellido, ocupacion):
+    def __int__(self, cedula, nombre, apellido, ocupacion):
         self.cedula = " "
         self.nombre = str
         self.apellido = str
@@ -16,6 +16,7 @@ class Medicamentos:
         self.nombre = ""
         self.compActivo = ""
         self.unidades = ""
+
 
 def registrarEmpleado():
     print("empleado")
@@ -32,6 +33,7 @@ def listaEmpleados():
 
     print("lista empleados: ", lista)
 
+
 def registrarMedicamento():
     print(" Registro de medicamentos ")
 
@@ -47,3 +49,17 @@ def listaMedicamentos():
 
 def horasTrabajo():
     print("horas de trabajo")
+    filas = int(input("introduce numero fila"))
+    columnas = int(input("introduce numero de columnas"))
+    matriz = []
+    for i in range(filas):
+        matriz.append([])
+        for j in range(columnas):
+            valor = float(input("fila{}, Columna {} : ".format(i + 1, j + 1)))
+            matriz[i].append(valor)
+    print()
+    for fila in matriz:
+        print("[", end=" ")
+        for elemento in fila:
+            print("{:8.2f}".format(elemento), end="")
+
