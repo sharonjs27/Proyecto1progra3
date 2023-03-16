@@ -55,7 +55,7 @@ def horasTrabajo():
     for i in range(filas):
         matriz.append([])
         for j in range(columnas):
-            valor = float(input("fila{}, Columna {} : ".format(i + 1, j + 1)))
+            valor = float(input("Empleado{}, DIA {} : ".format(i + 1, j + 1)))
             matriz[i].append(valor)
     print()
     for fila in matriz:
