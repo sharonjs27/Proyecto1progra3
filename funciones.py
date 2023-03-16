@@ -62,5 +62,5 @@ def horasTrabajo():
     for fila in matriz:
         print("[", end=" ")
         for elemento in fila:
-            print("{ }".format(elemento), end="")
+            print("{:8.2f}".format(elemento), end="")
 
