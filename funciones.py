@@ -58,8 +58,9 @@ def horasTrabajo():
             valor = float(input("Empleado{}, DIA {} : ".format(i + 1, j + 1)))
             matriz[i].append(valor)
     print()
+
     for fila in matriz:
         print("[", end=" ")
         for elemento in fila:
-            print("{:8.2f}".format(elemento), end="")
+            print("{ }".format(elemento), end="")
 
