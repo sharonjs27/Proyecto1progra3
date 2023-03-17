@@ -2,7 +2,20 @@ import asyncio
 
 import lista
 
+class Singleton:
+    _instance = None
 
+    def __init__(self):
+        print("Llamado al metodo Init")
+        self.nombre = "Soy Unico"
+
+    def __new__(cls, *args, **kwargs):
+
+        if not isinstance(cls._instance, cls):
+            print("Llamado al metodo nueva instancia")
+            cls._instance = object.__new__(cls)
+
+        return cls._instance
 class Empleado:
     def __int__(self, cedula, nombre, apellido, ocupacion):
         self.cedula = " "
@@ -55,7 +68,7 @@ def horasTrabajo():
     for i in range(filas):
         matriz.append([])
         for j in range(columnas):
-            valor = float(input("Empleado{}, DIA {} : ".format(i + 1, j + 1)))
+            valor = float(input("Empleado{} DIA {} : ".format(i + 1, j + 1)))
             matriz[i].append(valor)
     print()
 
