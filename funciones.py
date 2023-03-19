@@ -44,8 +44,20 @@ def registrarEmpleado():
 def listaEmpleados():
     print(" lista empleado ")
 
-    print("lista empleados: ", lista)
+    datos = []  # inicializar lista vacía para almacenar los datos
 
+    # pedir al usuario que ingrese datos hasta que decida parar
+    while True:
+        nombre = input("Ingrese el nombre (o 'fin' para terminar): ")
+        if nombre == 'fin':
+            break  # si el usuario ingresa 'fin', salir del bucle
+        edad = int(input("Ingrese la edad: "))
+        datos.append((nombre, edad))  # agregar los datos ingresados a la lista
+
+    # mostrar la lista de datos ingresados
+    print("Lista de datos ingresados:")
+    for nombre, edad in datos:
+        print(f"{nombre}: {edad}")
 
 def registrarMedicamento():
     print(" Registro de medicamentos ")
@@ -61,19 +73,23 @@ def listaMedicamentos():
 
 
 def horasTrabajo():
-    print("horas de trabajo")
-    filas = int(input("introduce numero fila"))
-    columnas = int(input("introduce numero de columnas"))
-    matriz = []
-    for i in range(filas):
-        matriz.append([])
-        for j in range(columnas):
-            valor = float(input("Empleado{} DIA {} : ".format(i + 1, j + 1)))
-            matriz[i].append(valor)
-    print()
 
-    for fila in matriz:
-        print("[", end=" ")
-        for elemento in fila:
-            print("{:8.2f}".format(elemento), end="")
+  print("horas de trabajo")
+  filas = int(input("introduce numero fila"))
+  columnas = int(input("introduce numero de columnas"))
+  horas_trabajadas = [[0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0]]
+  for i in range(filas):  # Recorre las filas
+     for j in range(columnas):  # Recorre las columnas
+        horas_trabajadas[i][j] = int(input(f"Ingrese las horas trabajadas por el empleado {i+1} el día {j+1}: "))
+
+  for i in range(filas):
+     total_horas = sum(horas_trabajadas[i])
+     print(f"El empleado {i+1} trabajó {total_horas} horas esta semana.")
+     total_general = sum(sum(horas_trabajadas, []))
+     print(f"En total, los empleados trabajaron {total_general} horas esta semana.")
+
 
