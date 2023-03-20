@@ -1,0 +1,10 @@
+def funcion1():
+    dato = 5
+    return dato
+
+def funcion2():
+    dato_funcion1 = funcion1()
+    resultado = dato_funcion1 * 2
+    return resultado
+
+print(funcion2()) # Salida: 10
