@@ -25,7 +25,7 @@ class Medicamentos:
         self.compActivo = compActivo
         self.unidades = unidades
 
-    def get_Nombre(self, nombre):
+    def get_nombre(self):
         return self.nombre
 
     def get_comActivo(self):
@@ -66,6 +66,23 @@ def listaEmpleados(datos):
 
 def registrarMedicamento():
     print(" Registro de medicamentos ")
+    inventario = []  # matriz en 0
+
+    # el usuario registra los datos
+    while True:
+        nombre = input("Ingrese el nombre (o '0' para terminar): ")
+        if nombre == '0':
+            break  # si el usuario ingresa '0', se sale del registrar
+
+        compActivo = input("Ingrese el compuesto activo: ")
+        unidades = input("Ingrese la unidades: ")
+        nuevoMedicamento = Medicamentos(nombre, compActivo, unidades)
+
+        inventario.append(nuevoMedicamento)  # agregar los datos ingresados a la lista
+
+    print("Lista de medicamentos ingresados:")
+    for nuevoMedicamento in inventario:
+        print(f"{nuevoMedicamento.nombre}, {nuevoMedicamento.compActivo}, {nuevoMedicamento.unidades}")
 
 
 def listaMedicamentos():
