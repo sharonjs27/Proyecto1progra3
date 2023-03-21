@@ -7,7 +7,7 @@ menu = int(input(
 datos = []
 while menu != 6:
     if menu == 1:
-        funciones.registrarEmpleado(datos)
+        funciones.registrarEmpleado()
     elif menu == 2:
         funciones.listaEmpleados(datos)
     elif menu == 3:

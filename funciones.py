@@ -36,30 +36,33 @@ class Medicamentos:
 
 
 #################################################
-def registrarEmpleado(datos):
+def registrarEmpleado():
     print("empleado")
     datos = []  # matriz en 0
 
     # el usuario registra los datos
     while True:
         nombre = input("Ingrese el nombre (o '0' para terminar): ")
-
         if nombre == '0':
             break  # si el usuario ingresa '0', se sale del registrar
+
         apellido = input("Ingrese el apellido: ")
         ocupacion = input("Ingrese la ocupación: ")
         nuevoEmpleado = Empleado(nombre, apellido, ocupacion)
 
         datos.append(nuevoEmpleado)  # agregar los datos ingresados a la lista
 
+    print("Lista de datos ingresados:")
+    for nuevoEmpleado in datos:
+     print(f"{nuevoEmpleado.nombre} , {nuevoEmpleado.apellido}, {nuevoEmpleado.ocupacion}")
+
 
 def listaEmpleados(datos):
     print(" lista empleado ")
 
     # mostrar la lista de datos ingresados
-    print("Lista de datos ingresados:")
-    for Empleado in datos:
-        print(f"nombre: {Empleado.get_Nombre},Apellido: {Empleado.get_Apellido}, Ocupacion: {Empleado.get_ocupacion}")
+
+
 
 
 def registrarMedicamento():
