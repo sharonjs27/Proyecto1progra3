@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>funciones.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+funciones.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">asyncio</span>
+
+<span class="s0">import </span><span class="s1">lista</span>
+
+
+<span class="s0">class </span><span class="s1">Empleado:</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">nombre</span><span class="s0">, </span><span class="s1">apellido</span><span class="s0">, </span><span class="s1">ocupacion):</span>
+        <span class="s1">self.nombre = nombre</span>
+        <span class="s1">self.apellido = apellido</span>
+        <span class="s1">self.ocupacion = ocupacion</span>
+
+    <span class="s0">def </span><span class="s1">get_Nombre(self):</span>
+        <span class="s0">return </span><span class="s1">self.nombre</span>
+
+    <span class="s0">def </span><span class="s1">get_Apellido(self):</span>
+        <span class="s0">return </span><span class="s1">self.apellido</span>
+
+    <span class="s0">def </span><span class="s1">get_ocupacion(self):</span>
+        <span class="s0">return </span><span class="s1">self.ocupacion</span>
+
+
+<span class="s0">class </span><span class="s1">Medicamentos:</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">nombre</span><span class="s0">, </span><span class="s1">compActivo</span><span class="s0">, </span><span class="s1">unidades):</span>
+        <span class="s1">self.nombre = nombre</span>
+        <span class="s1">self.compActivo = compActivo</span>
+        <span class="s1">self.unidades = unidades</span>
+
+    <span class="s0">def </span><span class="s1">get_Nombre(self</span><span class="s0">, </span><span class="s1">nombre):</span>
+        <span class="s0">return </span><span class="s1">self.nombre</span>
+
+    <span class="s0">def </span><span class="s1">get_comActivo(self):</span>
+        <span class="s0">return </span><span class="s1">self.compActivo</span>
+
+    <span class="s0">def </span><span class="s1">get_unidades(self):</span>
+        <span class="s0">return </span><span class="s1">self.unidades</span>
+
+
+<span class="s2">#################################################</span>
+<span class="s0">def </span><span class="s1">registrarEmpleado(datos):</span>
+    <span class="s1">print(</span><span class="s3">&quot;empleado&quot;</span><span class="s1">)</span>
+    <span class="s1">datos = []  </span><span class="s2"># matriz en 0</span>
+
+    <span class="s2"># el usuario registra los datos</span>
+    <span class="s0">while True</span><span class="s1">:</span>
+        <span class="s1">nombre = input(</span><span class="s3">&quot;Ingrese el nombre (o '0' para terminar): &quot;</span><span class="s1">)</span>
+
+        <span class="s0">if </span><span class="s1">nombre == </span><span class="s3">'0'</span><span class="s1">:</span>
+            <span class="s0">break  </span><span class="s2"># si el usuario ingresa '0', se sale del registrar</span>
+        <span class="s1">apellido = input(</span><span class="s3">&quot;Ingrese el apellido: &quot;</span><span class="s1">)</span>
+        <span class="s1">ocupacion = input(</span><span class="s3">&quot;Ingrese la ocupación: &quot;</span><span class="s1">)</span>
+        <span class="s1">nuevoEmpleado = Empleado(nombre</span><span class="s0">, </span><span class="s1">apellido</span><span class="s0">, </span><span class="s1">ocupacion)</span>
+
+        <span class="s1">datos.append(nuevoEmpleado)  </span><span class="s2"># agregar los datos ingresados a la lista</span>
+
+
+<span class="s0">def </span><span class="s1">listaEmpleados(datos):</span>
+    <span class="s1">print(</span><span class="s3">&quot; lista empleado &quot;</span><span class="s1">)</span>
+
+    <span class="s2"># mostrar la lista de datos ingresados</span>
+    <span class="s1">print(</span><span class="s3">&quot;Lista de datos ingresados:&quot;</span><span class="s1">)</span>
+    <span class="s0">for </span><span class="s1">Empleado </span><span class="s0">in </span><span class="s1">datos:</span>
+        <span class="s1">print(</span><span class="s3">f&quot;nombre: </span><span class="s0">{</span><span class="s1">Empleado.get_Nombre</span><span class="s0">}</span><span class="s3">,Apellido: </span><span class="s0">{</span><span class="s1">Empleado.get_Apellido</span><span class="s0">}</span><span class="s3">, Ocupacion: </span><span class="s0">{</span><span class="s1">Empleado.get_ocupacion</span><span class="s0">}</span><span class="s3">&quot;</span><span class="s1">)</span>
+
+
+<span class="s0">def </span><span class="s1">registrarMedicamento():</span>
+    <span class="s1">print(</span><span class="s3">&quot; Registro de medicamentos &quot;</span><span class="s1">)</span>
+
+
+<span class="s0">def </span><span class="s1">listaMedicamentos():</span>
+    <span class="s1">print(</span><span class="s3">&quot;lista de medicamento&quot;</span><span class="s1">)</span>
+
+
+<span class="s0">def </span><span class="s1">horasTrabajo():</span>
+    <span class="s1">print(</span><span class="s3">&quot;horas de trabajo&quot;</span><span class="s1">)</span>
+    <span class="s1">filas = int(input(</span><span class="s3">&quot;introduce numero de empleados&quot;</span><span class="s1">))</span>
+    <span class="s1">columnas = int(input(</span><span class="s3">&quot;introduce numero de columnas&quot;</span><span class="s1">))</span>
+    <span class="s1">horas_trabajadas = [[</span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s1">]</span><span class="s0">,</span>
+                        <span class="s1">[</span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s1">]</span><span class="s0">,</span>
+                        <span class="s1">[</span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s1">]</span><span class="s0">,</span>
+                        <span class="s1">[</span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s1">]</span><span class="s0">,</span>
+                        <span class="s1">[</span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s0">, </span><span class="s4">0</span><span class="s1">]]</span>
+    <span class="s0">for </span><span class="s1">i </span><span class="s0">in </span><span class="s1">range(filas):  </span><span class="s2"># Recorre las filas</span>
+        <span class="s0">for </span><span class="s1">j </span><span class="s0">in </span><span class="s1">range(columnas):  </span><span class="s2"># Recorre las columnas</span>
+            <span class="s1">horas_trabajadas[i][j] = int(</span>
+                <span class="s1">input(</span><span class="s3">f&quot;Ingrese las horas trabajadas por el empleado </span><span class="s0">{</span><span class="s1">i + </span><span class="s4">1</span><span class="s0">} </span><span class="s3">el día </span><span class="s0">{</span><span class="s1">j + </span><span class="s4">1</span><span class="s0">}</span><span class="s3">: &quot;</span><span class="s1">))</span>
+
+    <span class="s0">for </span><span class="s1">i </span><span class="s0">in </span><span class="s1">range(filas):</span>
+        <span class="s1">total_horas = sum(horas_trabajadas[i])</span>
+        <span class="s1">print(</span><span class="s3">f&quot;El empleado </span><span class="s0">{</span><span class="s1">i + </span><span class="s4">1</span><span class="s0">} </span><span class="s3">trabajó </span><span class="s0">{</span><span class="s1">total_horas</span><span class="s0">} </span><span class="s3">horas esta semana.&quot;</span><span class="s1">)</span>
+
+    <span class="s2"># Imprimir la matriz original</span>
+
+    <span class="s1">print(</span><span class="s3">&quot;Matriz original:&quot;</span><span class="s1">)</span>
+    <span class="s0">for </span><span class="s1">i </span><span class="s0">in </span><span class="s1">range(filas):</span>
+        <span class="s0">for </span><span class="s1">j </span><span class="s0">in </span><span class="s1">range(columnas):</span>
+            <span class="s1">print(horas_trabajadas[i][j]</span><span class="s0">, </span><span class="s1">end=</span><span class="s3">&quot; &quot;</span><span class="s1">)</span>
+        <span class="s1">print()</span>
+
+    <span class="s2"># Pedir al usuario que elija si desea modificar o eliminar un valor de la matriz</span>
+    <span class="s1">accion = input(</span><span class="s3">&quot;¿Desea modificar o eliminar un valor? (m/e): &quot;</span><span class="s1">)</span>
+
+    <span class="s2"># Si elige modificar un valor, pedir al usuario que indique la posición y el nuevo valor</span>
+    <span class="s0">if </span><span class="s1">accion == </span><span class="s3">&quot;m&quot;</span><span class="s1">:</span>
+        <span class="s1">filas = int(input(</span><span class="s3">&quot;Ingrese la fila donde se encuentra el valor que desea modificar: &quot;</span><span class="s1">))</span>
+        <span class="s1">columnas = int(input(</span><span class="s3">&quot;Ingrese la columna donde se encuentra el valor que desea modificar: &quot;</span><span class="s1">))</span>
+        <span class="s1">nuevo_valor = int(input(</span><span class="s3">&quot;Ingrese el nuevo valor para la posición [{},{}]: &quot;</span><span class="s1">.format(i + </span><span class="s4">1</span><span class="s0">, </span><span class="s1">j + </span><span class="s4">1</span><span class="s1">)))</span>
+        <span class="s1">horas_trabajadas[filas][columnas] = nuevo_valor</span>
+
+    <span class="s2"># Si elige eliminar un valor, pedir al usuario que indique la posición</span>
+    <span class="s0">elif </span><span class="s1">accion == </span><span class="s3">&quot;e&quot;</span><span class="s1">:</span>
+        <span class="s1">filas = int(input(</span><span class="s3">&quot;Ingrese la fila donde se encuentra el valor que desea eliminar: &quot;</span><span class="s1">))</span>
+        <span class="s1">columnas = int(input(</span><span class="s3">&quot;Ingrese la columna donde se encuentra el valor que desea eliminar: &quot;</span><span class="s1">))</span>
+        <span class="s0">del </span><span class="s1">horas_trabajadas[i][j]</span>
+
+    <span class="s2"># Imprimir la matriz modificada</span>
+    <span class="s1">print(</span><span class="s3">&quot;Matriz modificada:&quot;</span><span class="s1">)</span>
+    <span class="s0">for </span><span class="s1">i </span><span class="s0">in </span><span class="s1">range(len(horas_trabajadas)):</span>
+        <span class="s0">for </span><span class="s1">j </span><span class="s0">in </span><span class="s1">range(len(horas_trabajadas[</span><span class="s4">0</span><span class="s1">])):</span>
+            <span class="s1">print(horas_trabajadas[i][j]</span><span class="s0">, </span><span class="s1">end=</span><span class="s3">&quot; &quot;</span><span class="s1">)</span>
+        <span class="s1">print()</span>
+</pre>
+</body>
+</html>
