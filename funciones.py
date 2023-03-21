@@ -54,13 +54,12 @@ def registrarEmpleado():
 
     print("Lista de datos ingresados:")
     for nuevoEmpleado in datos:
-     print(f"{nuevoEmpleado.nombre} , {nuevoEmpleado.apellido}, {nuevoEmpleado.ocupacion}")
+     print(f"{nuevoEmpleado.nombre}, {nuevoEmpleado.apellido}, {nuevoEmpleado.ocupacion}")
 
 
 def listaEmpleados(datos):
     print(" lista empleado ")
 
-    # mostrar la lista de datos ingresados
 
 
 
