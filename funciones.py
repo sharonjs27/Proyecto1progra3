@@ -57,9 +57,8 @@ def listaEmpleados(datos):
     os.system('pause')
 
 
-def registrarMedicamento():
+def registrarMedicamento(inventario):
     print(" Registro de medicamentos ")
-    inventario = []  # matriz en 0
 
     # el usuario registra los datos
     while True:
@@ -73,14 +72,12 @@ def registrarMedicamento():
 
         inventario.append(nuevoMedicamento)  # agregar los datos ingresados a la lista
 
-    print("Lista de medicamentos ingresados:")
-    for nuevoMedicamento in inventario:
-        print(f"{nuevoMedicamento.nombre}, {nuevoMedicamento.compActivo}, {nuevoMedicamento.unidades}")
-
-
-def listaMedicamentos():
+def listaMedicamentos(inventario):
     print("lista de medicamento")
 
+    for nuevoMedicamento in inventario:
+        print(f" Medicamento {nuevoMedicamento.nombre} {nuevoMedicamento.compActivo} {nuevoMedicamento.unidades}")
+    os.system('pause')
 
 def horasTrabajo():
     print("horas de trabajo")
@@ -100,6 +97,9 @@ def horasTrabajo():
         total_horas = sum(horas_trabajadas[i])
         print(f"El empleado {i + 1} trabajó {total_horas} horas esta semana.")
 
+    for i in range(filas):
+      salario = (total_horas) * 2000
+      print(f"El empleado {i + 1} tiene un salario de: {salario} esta semana.")
     # Imprimir la matriz original
 
     print("Matriz original:")

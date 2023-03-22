@@ -1,6 +1,7 @@
 import funciones
 
 datos = []
+inventario = []
 menu = ""
 
 while menu != "6":
@@ -13,9 +14,9 @@ while menu != "6":
     elif menu == "2":
         funciones.listaEmpleados(datos)
     elif menu == "3":
-        funciones.registrarMedicamento()
+        funciones.registrarMedicamento(inventario)
     elif menu == "4":
-        funciones.listaMedicamentos()
+        funciones.listaMedicamentos(inventario)
     elif menu == "5":
         funciones.horasTrabajo()
 
