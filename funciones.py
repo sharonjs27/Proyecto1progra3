@@ -1,6 +1,4 @@
-import asyncio
-
-import lista
+import os
 
 
 class Empleado:
@@ -36,9 +34,9 @@ class Medicamentos:
 
 
 #################################################
-def registrarEmpleado():
+def registrarEmpleado(datos):
     print("empleado")
-    datos = []  # matriz en 0
+
     # el usuario registra los datos
     while True:
         nombre = input("Ingrese el nombre (o '0' para terminar): ")
@@ -51,16 +49,12 @@ def registrarEmpleado():
 
         datos.append(nuevoEmpleado)  # agregar los datos ingresados a la lista
 
-    print("Lista de empleados ingresados:")
-    for nuevoEmpleado in datos:
-     print(f"{nuevoEmpleado.nombre}, {nuevoEmpleado.apellido}, {nuevoEmpleado.ocupacion}")
-
 
 def listaEmpleados(datos):
-    print(" lista empleado ")
-
-
-
+    print("Lista de datos ingresados:")
+    for nuevoEmpleado in datos:
+        print(f"Empleado {nuevoEmpleado.nombre} {nuevoEmpleado.apellido} ({nuevoEmpleado.ocupacion})")
+    os.system('pause')
 
 
 def registrarMedicamento():
